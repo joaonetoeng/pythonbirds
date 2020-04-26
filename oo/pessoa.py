@@ -1,4 +1,5 @@
 class Pessoa:
+    olhos = 2
     def __init__(self, *filhos, nome, idade=None):
         self.idade = idade
         self.nome = nome
@@ -11,12 +12,13 @@ if __name__ == '__main__':
     luciano = Pessoa(joao, nome="Luciano")
     for f in luciano.filhos:
         print(f.nome)
-    # criando atributo dinamico .sobrenome de luciano
     luciano.sobrenome = 'Ramalho'
     print(luciano.__dict__)
     print(joao.__dict__)
-    del luciano.sobrenome
-    print(luciano.__dict__)
-    print(joao.__dict__)
+    print(luciano.olhos)
+    print(joao.olhos)
+    print(Pessoa.olhos)
+    print(id(Pessoa.olhos), id(joao.olhos), id(luciano.olhos))
+    print(id(joao.nome), id(luciano.nome))
 
 
