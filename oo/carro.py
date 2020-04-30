@@ -63,10 +63,3 @@ class Direcao(object):
     def girar_a_direita(self):
         # Como o Renzo implementou
         self.valor = self.rotacao_a_direcita_dict[self.valor]
-
-motor = Motor()
-direcao = Direcao()
-carro_do_renzo = Carro(motor, direcao)
-carro_do_renzo.girar_a_direita()
-carro_do_renzo.girar_a_direita()
-print(carro_do_renzo.calcular_direcao())

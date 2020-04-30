@@ -95,7 +95,7 @@ class FaseTestes(TestCase):
         self.assertEqual(math.radians(45), passaro_amarelo._angulo_de_lancamento)
         self.assertEqual(3, passaro_amarelo._tempo_de_lancamento)
 
-    def teste_intervalo_de_colisao_padrão(self):
+    def teste_intervalo_de_colisao_padrao(self):
         '''
         Método que testa se o intervalo de colisão da Fase é repassado aos atores. Padrão de intervalo é 1
         '''

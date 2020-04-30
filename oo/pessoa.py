@@ -5,20 +5,25 @@ class Pessoa:
         self.nome = nome
         self.filhos = list(filhos)
     def cumprimentar(self):
-        return f'Olá {self}'
+        return f'Olá meu nom é {self.nome}'
+
+    @staticmethod
+    def metodo_estatico():
+        return 42
+
+    @classmethod
+    def nomes_e_atributos_de_calsse(cls):
+        return f'{cls}, olhos = {cls.olhos}'
+
+class Homem(Pessoa):
+    def cumprimentar(self):
+        cumprimentar_da_classe_Pessoa = super().cumprimentar()
+        return f'{cumprimentar_da_classe_Pessoa} . Aperto de mão.'
 
 if __name__ == '__main__':
-    joao = Pessoa(nome="João")
-    luciano = Pessoa(joao, nome="Luciano")
+    joao = Homem(nome="João")
+    luciano = Homem(joao, nome="Luciano")
     for f in luciano.filhos:
         print(f.nome)
-    luciano.sobrenome = 'Ramalho'
-    print(luciano.__dict__)
-    print(joao.__dict__)
-    print(luciano.olhos)
-    print(joao.olhos)
-    print(Pessoa.olhos)
-    print(id(Pessoa.olhos), id(joao.olhos), id(luciano.olhos))
-    print(id(joao.nome), id(luciano.nome))
-
+    print(luciano.cumprimentar())
 
